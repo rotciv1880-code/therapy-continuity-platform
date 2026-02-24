@@ -110,3 +110,8 @@
 - [x] Demo mode routing (/demo, /demo/dashboard, /demo/client)
 - [x] Landing page "Try Demo" CTA linking to /demo
 - [x] Demo reset button in banner
+
+## Deployment
+- [ ] Save Manus checkpoint with demo button visible on landing page
+- [ ] Set Railway environment variables (JWT_SECRET, OAUTH_SERVER_URL, VITE_APP_ID, DATABASE_URL, etc.)
+- [ ] Trigger Railway redeploy and confirm successful startup
