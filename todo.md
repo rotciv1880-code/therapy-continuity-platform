@@ -98,4 +98,15 @@
 - [x] Subscription tier enforcement tests
 
 ## GitHub Export
-- [ ] Export project to GitHub repository using provided token
+- [x] Export project to GitHub repository using provided token
+
+## Demo Mode
+- [x] Demo context/state provider (isDemoMode, demoPersona: therapist|client)
+- [x] Static demo data fixtures (therapist profile, 3 clients, mood entries, events, goals, homework, AI summaries)
+- [x] Demo entry page with persona selection (Try as Therapist / Try as Client)
+- [x] Demo banner component shown across all demo pages
+- [x] Therapist demo dashboard wired to static demo data
+- [x] Client demo dashboard wired to static demo data
+- [x] Demo mode routing (/demo, /demo/dashboard, /demo/client)
+- [x] Landing page "Try Demo" CTA linking to /demo
+- [x] Demo reset button in banner

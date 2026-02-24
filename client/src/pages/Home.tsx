@@ -158,6 +158,7 @@ export default function Home() {
             <a href="#benefits" className="hover:text-foreground transition-colors">Benefits</a>
             <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
             <a href="#demo" className="hover:text-foreground transition-colors">Request Demo</a>
+            <button onClick={() => navigate("/demo")} className="text-primary font-medium hover:text-primary/80 transition-colors flex items-center gap-1"><Sparkles className="w-3.5 h-3.5" />Try Demo</button>
           </div>
           <div className="flex items-center gap-3">
             {isAuthenticated ? (
@@ -195,8 +196,9 @@ export default function Home() {
                 Start Free Trial
                 <ChevronRight className="w-5 h-5 ml-2" />
               </Button>
-              <Button size="lg" variant="outline" className="text-base px-8 h-12 bg-background" onClick={() => document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" })}>
-                Request a Demo
+              <Button size="lg" variant="outline" className="text-base px-8 h-12 bg-background" onClick={() => navigate("/demo")}>
+                <Sparkles className="w-4 h-4 mr-2" />
+                Try Interactive Demo
               </Button>
             </div>
             <p className="mt-5 text-sm text-muted-foreground">No credit card required · HIPAA-conscious architecture · Cancel anytime</p>
