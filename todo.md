@@ -118,3 +118,5 @@
 - [x] Fix landing page: make Try Interactive Demo button prominently visible (standalone section, not just in hero)
 - [x] Fix: ensure amber demo banner section is present and visible in published landing page
 - [x] Fix: amber demo banner and full nav links missing from live preview — rewrite hero/nav section
+- [ ] Fix: investigate and resolve runtime error shown on landing page
+- [ ] Fix: move amber demo banner above the fold so it's visible without scrolling

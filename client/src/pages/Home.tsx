@@ -146,6 +146,13 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground font-['Inter']">
       {/* ── Navigation ─────────────────────────────────────────────────────── */}
       <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
+        {/* Amber announcement bar — always visible above the fold */}
+        <div className="bg-amber-500 text-white text-sm py-2">
+          <div className="container flex items-center justify-center gap-3 flex-wrap">
+            <span className="font-semibold flex items-center gap-1.5"><Sparkles className="w-3.5 h-3.5" />Try the Interactive Demo — no sign-up required.</span>
+            <button onClick={() => navigate("/demo")} className="underline underline-offset-2 font-bold hover:opacity-80 transition-opacity">Launch Demo →</button>
+          </div>
+        </div>
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
@@ -176,7 +183,7 @@ export default function Home() {
       </nav>
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden pt-20 pb-28">
+      <section className="relative overflow-hidden pt-10 pb-10">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/10 pointer-events-none" />
         <div className="container relative">
           <div className="max-w-3xl mx-auto text-center">
@@ -184,11 +191,11 @@ export default function Home() {
               <Sparkles className="w-3.5 h-3.5 mr-1.5" />
               AI-Assisted Clinical Continuity
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-6" style={{ fontFamily: "'Lora', serif" }}>
-              Therapy should not pause{" "}
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-[1.1] mb-5" style={{ fontFamily: "'Lora', serif" }}>
+              Therapy should not pause{"\ "}
               <span className="text-primary">between sessions.</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-7 max-w-2xl mx-auto">
               A therapist-led platform that maintains therapeutic momentum between appointments. Structured client engagement, AI-powered insights, and session preparation — without replacing your clinical judgment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -205,7 +212,7 @@ export default function Home() {
           </div>
 
           {/* Stats bar */}
-          <div className="mt-20 grid grid-cols-3 gap-8 max-w-2xl mx-auto text-center">
+          <div className="mt-10 grid grid-cols-3 gap-8 max-w-2xl mx-auto text-center">
             {[
               { value: "3×", label: "Higher homework adherence" },
               { value: "40%", label: "More session-ready clients" },
@@ -216,28 +223,6 @@ export default function Home() {
                 <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Demo CTA Banner ───────────────────────────────────────────────── */}
-      <section className="py-12 bg-amber-50 border-y border-amber-200">
-        <div className="container">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 max-w-4xl mx-auto">
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <Sparkles className="w-5 h-5 text-amber-600" />
-                <span className="text-sm font-semibold text-amber-700 uppercase tracking-wide">No sign-up required</span>
-              </div>
-              <h3 className="text-xl font-bold text-foreground">See the platform in action — right now.</h3>
-              <p className="text-muted-foreground text-sm mt-1">Explore as Dr. Sarah Chen (therapist) or Marcus T. (client) with fully pre-populated demo data.</p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-              <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8" onClick={() => navigate("/demo")}>
-                <Sparkles className="w-4 h-4 mr-2" />
-                Launch Interactive Demo
-              </Button>
-            </div>
           </div>
         </div>
       </section>
