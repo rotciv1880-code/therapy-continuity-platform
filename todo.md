@@ -117,3 +117,4 @@
 - [x] Trigger Railway redeploy and confirm successful startup
 - [x] Fix landing page: make Try Interactive Demo button prominently visible (standalone section, not just in hero)
 - [x] Fix: ensure amber demo banner section is present and visible in published landing page
+- [x] Fix: amber demo banner and full nav links missing from live preview — rewrite hero/nav section
