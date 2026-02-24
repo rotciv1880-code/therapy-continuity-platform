@@ -112,6 +112,6 @@
 - [x] Demo reset button in banner
 
 ## Deployment
-- [ ] Save Manus checkpoint with demo button visible on landing page
+- [x] Save Manus checkpoint with demo button visible on landing page
 - [ ] Set Railway environment variables (JWT_SECRET, OAUTH_SERVER_URL, VITE_APP_ID, DATABASE_URL, etc.)
 - [ ] Trigger Railway redeploy and confirm successful startup
