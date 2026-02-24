@@ -21,15 +21,27 @@ import {
 } from "@/components/ui/sidebar";
 import { getLoginUrl } from "@/const";
 import { useIsMobile } from "@/hooks/useMobile";
-import { LayoutDashboard, LogOut, PanelLeft, Users } from "lucide-react";
+import { Brain, ClipboardList, CreditCard, Heart, LayoutDashboard, LogOut, PanelLeft, Shield, Users } from "lucide-react";
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { DashboardLayoutSkeleton } from './DashboardLayoutSkeleton';
 import { Button } from "./ui/button";
 
-const menuItems = [
-  { icon: LayoutDashboard, label: "Page 1", path: "/" },
-  { icon: Users, label: "Page 2", path: "/some-path" },
+// Navigation items are role-aware — both therapist and client items are defined;
+// the correct set is selected based on user role at render time.
+const therapistMenuItems = [
+  { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
+  { icon: Users, label: "Clients", path: "/dashboard" },
+  { icon: CreditCard, label: "Subscription", path: "/subscription" },
+  { icon: Shield, label: "Audit Log", path: "/audit" },
+];
+
+const clientMenuItems = [
+  { icon: Heart, label: "My Progress", path: "/client" },
+];
+
+const sharedMenuItems = [
+  { icon: Brain, label: "Onboarding", path: "/onboarding" },
 ];
 
 const SIDEBAR_WIDTH_KEY = "sidebar-width";
@@ -112,6 +124,11 @@ function DashboardLayoutContent({
   const isCollapsed = state === "collapsed";
   const [isResizing, setIsResizing] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
+  const menuItems = user?.role === "therapist"
+    ? therapistMenuItems
+    : user?.role === "client"
+    ? clientMenuItems
+    : sharedMenuItems;
   const activeMenuItem = menuItems.find(item => item.path === location);
   const isMobile = useIsMobile();
 
@@ -170,8 +187,11 @@ function DashboardLayoutContent({
               </button>
               {!isCollapsed ? (
                 <div className="flex items-center gap-2 min-w-0">
-                  <span className="font-semibold tracking-tight truncate">
-                    Navigation
+                  <div className="w-5 h-5 rounded bg-primary flex items-center justify-center shrink-0">
+                    <Heart className="w-3 h-3 text-primary-foreground" />
+                  </div>
+                  <span className="font-semibold tracking-tight truncate text-sidebar-foreground">
+                    TherapyContinuity
                   </span>
                 </div>
               ) : null}
@@ -257,7 +277,7 @@ function DashboardLayoutContent({
             </div>
           </div>
         )}
-        <main className="flex-1 p-4">{children}</main>
+        <main className="flex-1 overflow-auto">{children}</main>
       </SidebarInset>
     </>
   );
