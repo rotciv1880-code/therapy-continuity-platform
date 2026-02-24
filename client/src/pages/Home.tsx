@@ -196,7 +196,7 @@ export default function Home() {
                 Start Free Trial
                 <ChevronRight className="w-5 h-5 ml-2" />
               </Button>
-              <Button size="lg" variant="outline" className="text-base px-8 h-12 bg-background" onClick={() => navigate("/demo")}>
+              <Button size="lg" className="text-base px-8 h-12 bg-amber-500 hover:bg-amber-600 text-white border-0" onClick={() => navigate("/demo")}>
                 <Sparkles className="w-4 h-4 mr-2" />
                 Try Interactive Demo
               </Button>
@@ -216,6 +216,28 @@ export default function Home() {
                 <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Demo CTA Banner ───────────────────────────────────────────────── */}
+      <section className="py-12 bg-amber-50 border-y border-amber-200">
+        <div className="container">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 max-w-4xl mx-auto">
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <Sparkles className="w-5 h-5 text-amber-600" />
+                <span className="text-sm font-semibold text-amber-700 uppercase tracking-wide">No sign-up required</span>
+              </div>
+              <h3 className="text-xl font-bold text-foreground">See the platform in action — right now.</h3>
+              <p className="text-muted-foreground text-sm mt-1">Explore as Dr. Sarah Chen (therapist) or Marcus T. (client) with fully pre-populated demo data.</p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+              <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8" onClick={() => navigate("/demo")}>
+                <Sparkles className="w-4 h-4 mr-2" />
+                Launch Interactive Demo
+              </Button>
+            </div>
           </div>
         </div>
       </section>
